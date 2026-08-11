@@ -124,22 +124,22 @@ export default function Hero() {
       {/* Sticky Viewport Pinned Container */}
       <div
         ref={pinnedViewportRef}
-        className="w-full h-screen sticky top-0 overflow-hidden bg-[#FAF6EE] flex flex-col justify-between pt-4 pb-6 px-4 sm:px-6 lg:px-8 border-b border-[#E8DDCB] relative"
+        className="w-full h-screen sticky top-0 overflow-hidden bg-[#FAF6EE] flex flex-col justify-between pt-3 pb-5 px-4 sm:px-6 lg:px-8 border-b border-[#E8DDCB] relative"
       >
         {/* Ambient Soft Glow Orbs */}
-        <div className="absolute top-10 left-1/3 w-[500px] h-[500px] bg-[#C85A17]/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-10 right-1/4 w-[450px] h-[450px] bg-[#DAA520]/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-10 left-1/3 w-[450px] h-[450px] bg-[#C85A17]/10 rounded-3xl blur-3xl pointer-events-none" />
+        <div className="absolute bottom-10 right-1/4 w-[400px] h-[400px] bg-[#DAA520]/15 rounded-3xl blur-3xl pointer-events-none" />
 
         {/* Top Header Controls Bar */}
-        <div className="w-full max-w-7xl mx-auto flex items-center justify-between z-20 pt-2">
+        <div className="w-full max-w-7xl mx-auto flex items-center justify-between z-20 pt-1">
           
-          {/* <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#C85A17]/15 border border-[#C85A17]/30 text-[#C85A17] text-xs font-extrabold uppercase tracking-widest">
+          <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#C85A17]/15 border border-[#C85A17]/30 text-[#C85A17] text-xs font-extrabold uppercase tracking-widest">
             <Sparkles className="w-4 h-4 text-[#C85A17] animate-pulse" />
             <span>SCROLL-DRIVEN PRODUCT STORYTELLING</span>
-          </div> */}
+          </div>
 
           {/* Scene Counter Badge */}
-          {/* <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3">
             <div className="font-anton text-2xl text-[#2C1A14] tracking-wider">
               {currentScene.index} <span className="text-xs text-[#C85A17] font-sans font-bold">/ 05</span>
             </div>
@@ -147,13 +147,13 @@ export default function Hero() {
               <ShieldCheck className="w-3.5 h-3.5 text-[#DAA520]" />
               <span>{currentScene.badgeText}</span>
             </div>
-          </div> */}
+          </div>
 
         </div>
 
-        {/* Giant Display Title Behind Product */}
+        {/* Giant Watermark Display Title Behind Product */}
         <div className="w-full text-center z-10 my-auto pointer-events-none select-none">
-          <h1 className="font-anton text-6xl sm:text-9xl lg:text-[11rem] text-[#2C1A14] leading-none uppercase tracking-widest opacity-95">
+          <h1 className="font-anton text-5xl sm:text-8xl lg:text-[10rem] text-[#2C1A14] leading-none uppercase tracking-widest opacity-90">
             GURUKRIPA
           </h1>
           <p className="text-xs sm:text-sm font-extrabold text-[#C85A17] tracking-widest uppercase mt-1">
@@ -161,8 +161,8 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* DEAD-CENTER PURE CUTOUT PRODUCT SHOWCASE (NO ROTATION - SMOOTH SCROLL FADE & SCALE TRANSITION) */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none">
+        {/* DEAD-CENTER PURE CUTOUT PRODUCT SHOWCASE (MOVED UPWARD TOP-[43%] - NO CUTOFF / NO CAPSULES) */}
+        <div className="absolute left-1/2 top-[43%] -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none">
           {scenes.map((scene, idx) => {
             const isActive = activeSceneIndex === idx;
             return (
@@ -171,10 +171,10 @@ export default function Hero() {
                 className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-700 ease-out ${
                   isActive
                     ? 'opacity-100 scale-100 translate-y-0'
-                    : 'opacity-0 scale-90 translate-y-8 pointer-events-none'
+                    : 'opacity-0 scale-90 translate-y-6 pointer-events-none'
                 }`}
               >
-                <div className="relative w-[280px] h-[340px] sm:w-[380px] sm:h-[460px] lg:w-[440px] lg:h-[520px] filter drop-shadow-[0_20px_30px_rgba(44,26,20,0.35)]">
+                <div className="relative w-[240px] h-[300px] sm:w-[340px] sm:h-[420px] lg:w-[400px] lg:h-[480px] filter drop-shadow-[0_20px_30px_rgba(44,26,20,0.35)]">
                   <Image
                     src={scene.product.image}
                     alt={scene.product.name}
@@ -188,13 +188,13 @@ export default function Hero() {
           })}
         </div>
 
-        {/* Open Content Overlays (NO BACKGROUND CARD BOXES) */}
+        {/* Open Content Overlays (NO BACKGROUND CARD BOXES / NO CAPSULES) */}
         <div className="w-full max-w-7xl mx-auto flex-1 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center my-auto z-20 pointer-events-auto">
           
-          {/* Left Text Column (Open Layout) */}
-          <div className="lg:col-span-5 space-y-3 sm:space-y-4 max-w-lg">
+          {/* Left Text Column */}
+          <div className="lg:col-span-5 space-y-2 sm:space-y-3 max-w-lg">
             
-            <div className="space-y-1">
+            <div className="space-y-0.5">
               <span className="text-xs font-extrabold text-[#C85A17] uppercase tracking-widest block">
                 {currentScene.tag}
               </span>
@@ -203,7 +203,7 @@ export default function Hero() {
               </p>
             </div>
 
-            <h2 className="font-anton text-3xl sm:text-5xl text-[#2C1A14] leading-tight uppercase tracking-wider drop-shadow-xs">
+            <h2 className="font-anton text-3xl sm:text-5xl text-[#2C1A14] leading-tight uppercase tracking-wider">
               {currentScene.headline}
             </h2>
 
@@ -266,13 +266,13 @@ export default function Hero() {
             </div>
 
             <div className="-space-x-3 flex items-center justify-end pt-1">
-              <div className="relative w-10 h-10 rounded-full border-2 border-[#DAA520] overflow-hidden">
+              <div className="relative w-10 h-10 rounded-2xl border-2 border-[#DAA520] overflow-hidden">
                 <Image src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Devotee" fill className="object-cover" />
               </div>
-              <div className="relative w-10 h-10 rounded-full border-2 border-[#DAA520] overflow-hidden">
+              <div className="relative w-10 h-10 rounded-2xl border-2 border-[#DAA520] overflow-hidden">
                 <Image src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Pundit" fill className="object-cover" />
               </div>
-              <div className="relative w-10 h-10 rounded-full border-2 border-[#DAA520] overflow-hidden">
+              <div className="relative w-10 h-10 rounded-2xl border-2 border-[#DAA520] overflow-hidden">
                 <Image src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80" alt="Temple Priest" fill className="object-cover" />
               </div>
             </div>
