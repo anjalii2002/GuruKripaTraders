@@ -14,8 +14,8 @@ export default function Home() {
       <CategoryShowcase />
       <ProductCatalog />
       <BundleBuilder />
-      <VedicRitualGuide />
-      <PurityGuarantee />
+      {/* <VedicRitualGuide /> */}
+      {/* <PurityGuarantee /> */}
       <Testimonials />
       <FaqAccordion />
     </>

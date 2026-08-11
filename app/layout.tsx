@@ -34,7 +34,7 @@ export default function RootLayout({
           </main>
           <CartDrawer />
           <QuickViewModal />
-          <SankalpModal />
+          {/* <SankalpModal /> */}
           {/* <ImageUploader /> */}
           <Footer />
         </CartProvider>

@@ -12,10 +12,7 @@ export default function Testimonials() {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#C85A17]/15 border border-[#C85A17]/30 text-[#C85A17] text-xs font-extrabold uppercase tracking-widest">
-            <Sparkles className="w-4 h-4 text-[#C85A17]" />
-            <span>Devotee Experiences & Blessings</span>
-          </div>
+        
           <h2 className="font-anton text-4xl sm:text-5xl text-[#2C1A14] uppercase tracking-wider leading-tight">
             Loved by Temples & Families Across India
           </h2>
@@ -33,7 +30,7 @@ export default function Testimonials() {
             >
               
               <div className="space-y-4">
-                
+              
                 {/* Quote icon & stars */}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-1 text-[#DAA520]">

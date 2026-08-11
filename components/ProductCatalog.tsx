@@ -14,6 +14,7 @@ export default function ProductCatalog() {
     'Vardaan Oil Series',
     'Kesari Deep Dravya',
     'Curated Ritual Boxes',
+    'Hawan Samagri',
     'Purity Guarantee Essentials',
   ];
 
@@ -32,10 +33,7 @@ export default function ProductCatalog() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#C85A17]/15 border border-[#C85A17]/30 text-[#C85A17] text-xs font-extrabold uppercase tracking-widest">
-            <Sparkles className="w-4 h-4 text-[#C85A17]" />
-            <span>SACRED RETAIL STOREFRONT</span>
-          </div>
+          
           <h2 className="font-anton text-4xl sm:text-6xl text-[#2C1A14] leading-tight uppercase tracking-wider">
             Curated Poojan Oils & Samagri
           </h2>

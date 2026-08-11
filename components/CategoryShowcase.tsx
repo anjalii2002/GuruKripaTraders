@@ -15,7 +15,7 @@ export default function CategoryShowcase() {
       image: '/images/vardaan-bottles.jpg',
       tag: 'Bestseller • 1L PET Bottles',
       link: '#catalog',
-      badge: '35% OFF PACKS'
+      // badge: '35% OFF PACKS'
     },
     {
       id: 'jars',
@@ -25,7 +25,7 @@ export default function CategoryShowcase() {
       image: '/images/kesari-jars.jpg',
       tag: '250ml, 500ml & 1000ml Jars',
       link: '#catalog',
-      badge: 'TEMPLE GRADE'
+      // badge: 'TEMPLE GRADE'
     },
     {
       id: 'boxes',
@@ -35,17 +35,16 @@ export default function CategoryShowcase() {
       image: '/images/kesari-boxes.jpg',
       tag: 'Royal Gift Box Edition',
       link: '#catalog',
-      badge: 'FESTIVAL SPECIAL'
+      // badge: 'FESTIVAL SPECIAL'
     },
     {
-      id: 'trunks',
-      title: 'Curated Ritual Trunks',
-      hindi: 'शाही पूजन सामग्री ट्रंक',
-      subtitle: '32-Item Cedarwood Samagri Boxes',
-      image: '/images/hero-showcase.png',
-      tag: 'Complete Hawan Kit',
+      id: 'havan-samagri',
+      title: 'Shri Dham Havan Samagri',
+      hindi: 'शुद्ध सनातनी हवन सामग्री',
+      subtitle: 'Pure Sanatani Havan Mix — 40+ Sacred Herbs',
+      image: '/images/shridham-havan.png',
+      tag: 'Pure Sanatani Havan',
       link: '#catalog',
-      badge: 'HERITAGE EDITION'
     }
   ];
 
@@ -56,10 +55,7 @@ export default function CategoryShowcase() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#C85A17]/15 border border-[#C85A17]/30 text-[#C85A17] text-xs font-extrabold uppercase tracking-widest">
-              <Sparkles className="w-3.5 h-3.5 text-[#C85A17]" />
-              <span>Explore Our Retail Product Lines</span>
-            </div>
+           
             <h2 className="font-anton text-3xl sm:text-5xl text-[#2C1A14] leading-tight uppercase tracking-wider">
               Shop by Category
             </h2>
@@ -83,9 +79,9 @@ export default function CategoryShowcase() {
               className="group relative rounded-3xl overflow-hidden bg-white border border-[#E8DDCB] shadow-xs hover:shadow-xl transition-all duration-500 flex flex-col justify-between h-96"
             >
               {/* Category Badge */}
-              <div className="absolute top-4 left-4 z-10 bg-[#C85A17] text-white text-[10px] font-extrabold px-3 py-1 rounded-full shadow-md">
+              {/* <div className="absolute top-4 left-4 z-10 bg-[#C85A17] text-white text-[10px] font-extrabold px-3 py-1 rounded-full shadow-md">
                 {cat.badge}
-              </div>
+              </div> */}
 
               {/* Image Background */}
               <div className="relative w-full h-56 bg-[#F3ECE0] overflow-hidden">

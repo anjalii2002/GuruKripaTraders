@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { PRODUCTS } from '@/lib/data';
 import { useCart } from '@/lib/cart-context';
-import { ShoppingBag, Sparkles, ArrowRight, ShieldCheck, Flame, Check, Award, ChevronDown } from 'lucide-react';
+import { ShoppingBag, Sparkles, ArrowRight, ShieldCheck, Flame, Check, ChevronDown } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -28,19 +28,19 @@ export default function Hero() {
       product: PRODUCTS[0], // Vardaan Til Tail
       tag: 'Bestseller • 36-Hour Akhand Flame',
       hindiTag: 'वरदान दीपक जलाने का तेल',
-      headline: 'Vardaan Til Tail दीपक Oil',
-      subtitle: 'Formulated from 100% cold-pressed sesame oil infused with Bhimseni camphor. Guaranteed zero carbon soot buildup for home & temple shrines.',
-      badgeText: '35% OFF PACKS',
+      headline: 'Vardaan दीपक Oil',
+      // subtitle: 'Formulated from 100% cold-pressed sesame oil infused with Bhimseni camphor. Guaranteed zero carbon soot buildup for home & temple shrines.',
+      // badgeText: '35% OFF PACKS',
       highlight: '36-Hour Continuous Soot-Free Flame',
     },
     {
       index: '02',
       product: PRODUCTS[1], // Shri Kesari Yellow Jars
       tag: 'Temple Grade • Consecrated Dravya',
-      hindiTag: 'श्री केसरी वंदना दीप द्रव्य (पीला जार)',
+      hindiTag: 'केसरी वंदना दीप द्रव्य ',
       headline: 'Shri Kesari Yellow Dravya Jars',
-      subtitle: 'Packed in UV-protected airtight jars (250ml, 500ml & 1000ml). Delivers a radiant golden flame for daily Aarti & Deepam rituals.',
-      badgeText: 'AIRTIGHT LEAKPROOF',
+      // subtitle: 'Packed in UV-protected airtight jars (250ml, 500ml & 1000ml). Delivers a radiant golden flame for daily Aarti & Deepam rituals.',
+      // badgeText: 'AIRTIGHT LEAKPROOF',
       highlight: 'Radiant Golden Flame & Aromatic Purity',
     },
     {
@@ -49,29 +49,18 @@ export default function Hero() {
       tag: 'Festival Special • Royal Edition',
       hindiTag: 'श्री केसरी प्लस वंदना दीप (बॉक्स पैक)',
       headline: 'Kesari Plus Gift Boxes',
-      subtitle: 'Luxury box edition designed for Deepavali gifting and auspicious family celebrations. Includes consecrated brass deepam accessories.',
-      badgeText: 'FESTIVAL SPECIAL',
+      // subtitle: 'Luxury box edition designed for Deepavali gifting and auspicious family celebrations. Includes consecrated brass deepam accessories.',
+      // badgeText: 'FESTIVAL SPECIAL',
       highlight: 'Royal Box Pack for Auspicious Gifting',
     },
     {
       index: '04',
-      product: PRODUCTS[3], // Saffron & A2 Ghee
-      tag: 'Scriptural Purity • Heritage Edition',
-      hindiTag: 'कश्मीरी मोंगरा केसर एवं वैदिक बिलोना घृत',
-      headline: 'Kashmiri Saffron & A2 Gir Cow Ghee',
-      subtitle: 'Handpicked Grade A1 Kashmiri Saffron filaments paired with traditional Bilona method A2 Gir Cow Vedic Ghee.',
-      badgeText: 'A2 BILONA METHOD',
-      highlight: '100% Pure Grade A1 Kashmiri Saffron',
-    },
-    {
-      index: '05',
-      product: PRODUCTS[4], // Curated Samagri Trunk
-      tag: 'Complete Ritual Trunk • 32 Items',
-      hindiTag: 'शाही पूजन सामग्री ट्रंक',
-      headline: 'Curated Shahi Poojan Trunk',
-      subtitle: 'Cedarwood trunk filled with 32 essential consecrated samagri items for Hawan, Lakshmi Pujan, and milestone Mahayagnas.',
-      badgeText: '32 ESSENTIAL ITEMS',
-      highlight: 'Full Cedarwood Ritual Box Kit',
+      product: PRODUCTS[5], // Shri Dham Havan Samagri
+      tag: 'Pure Sanatani Havan • 40+ Sacred Herbs',
+      hindiTag: 'शुद्ध सनातनी हवन सामग्री',
+      headline: 'Shri Dham Havan Samagri',
+      subtitle: 'Sacred blend of 40+ natural herbs, guggal, kapoor & chandan for pure Hawan & Yajna rituals.',
+      highlight: 'Prepared Under Vedic Acharya Supervision',
     },
   ];
 
@@ -133,22 +122,8 @@ export default function Hero() {
         {/* Top Header Controls Bar */}
         <div className="w-full max-w-7xl mx-auto flex items-center justify-between z-20 pt-1">
           
-          <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#C85A17]/15 border border-[#C85A17]/30 text-[#C85A17] text-xs font-extrabold uppercase tracking-widest">
-            <Sparkles className="w-4 h-4 text-[#C85A17] animate-pulse" />
-            <span>SCROLL-DRIVEN PRODUCT STORYTELLING</span>
-          </div>
-
-          {/* Scene Counter Badge */}
-          <div className="flex items-center gap-3">
-            <div className="font-anton text-2xl text-[#2C1A14] tracking-wider">
-              {currentScene.index} <span className="text-xs text-[#C85A17] font-sans font-bold">/ 05</span>
-            </div>
-            <div className="hidden sm:flex items-center gap-1.5 bg-[#2C1A14] px-3.5 py-1.5 rounded-xl text-white text-xs font-bold border border-[#DAA520]">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#DAA520]" />
-              <span>{currentScene.badgeText}</span>
-            </div>
-          </div>
-
+        
+         
         </div>
 
         {/* Giant Watermark Display Title Behind Product */}
@@ -157,12 +132,12 @@ export default function Hero() {
             GURUKRIPA
           </h1>
           <p className="text-xs sm:text-sm font-extrabold text-[#C85A17] tracking-widest uppercase mt-1">
-            VARDAAN TIL TAIL • SHRI KESARI DEEP DRAVYA • SACRED SAMAGRI
+            VARDAAN OIL •  KESARI  VANDANA DEEP DRAVYA • HAWAN SAMAGRI
           </p>
         </div>
 
-        {/* DEAD-CENTER PURE CUTOUT PRODUCT SHOWCASE (MOVED UPWARD TOP-[43%] - NO CUTOFF / NO CAPSULES) */}
-        <div className="absolute left-1/2 top-[43%] -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none">
+        {/* DEAD-CENTER PURE CUTOUT PRODUCT SHOWCASE (RESPONSIVE MOVED UPWARD - NO OVERLAP) */}
+        <div className="absolute left-1/2 top-[24%] sm:top-[28%] lg:top-[30%] -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none">
           {scenes.map((scene, idx) => {
             const isActive = activeSceneIndex === idx;
             return (
@@ -174,7 +149,7 @@ export default function Hero() {
                     : 'opacity-0 scale-90 translate-y-6 pointer-events-none'
                 }`}
               >
-                <div className="relative w-[240px] h-[300px] sm:w-[340px] sm:h-[420px] lg:w-[400px] lg:h-[480px] filter drop-shadow-[0_20px_30px_rgba(44,26,20,0.35)]">
+                <div className="relative w-[180px] h-[230px] sm:w-[340px] sm:h-[420px] lg:w-[480px] lg:h-[560px] filter drop-shadow-[0_15px_25px_rgba(44,26,20,0.3)]">
                   <Image
                     src={scene.product.image}
                     alt={scene.product.name}
@@ -189,13 +164,13 @@ export default function Hero() {
         </div>
 
         {/* Open Content Overlays (NO BACKGROUND CARD BOXES / NO CAPSULES) */}
-        <div className="w-full max-w-7xl mx-auto flex-1 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center my-auto z-20 pointer-events-auto">
+        <div className="w-full max-w-7xl mx-auto flex-1 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-end lg:items-center pb-6 sm:pb-10 lg:pb-0 z-20 pointer-events-auto">
           
           {/* Left Text Column */}
-          <div className="lg:col-span-5 space-y-2 sm:space-y-3 max-w-lg">
+          <div className="lg:col-span-5 space-y-2 sm:space-y-3 max-w-lg mx-auto lg:mx-0 text-center lg:text-left">
             
             <div className="space-y-0.5">
-              <span className="text-xs font-extrabold text-[#C85A17] uppercase tracking-widest block">
+              <span className="text-[11px] sm:text-xs font-extrabold text-[#C85A17] uppercase tracking-widest block">
                 {currentScene.tag}
               </span>
               <p className="text-xs font-bold text-[#DAA520] font-serif">
@@ -203,25 +178,25 @@ export default function Hero() {
               </p>
             </div>
 
-            <h2 className="font-anton text-3xl sm:text-5xl text-[#2C1A14] leading-tight uppercase tracking-wider">
+            <h2 className="font-anton text-2xl sm:text-4xl lg:text-5xl text-[#2C1A14] leading-tight uppercase tracking-wider">
               {currentScene.headline}
             </h2>
 
-            <p className="text-[#3D2319] text-xs sm:text-sm leading-relaxed font-semibold max-w-md">
+            <p className="text-[#3D2319] text-xs sm:text-sm leading-relaxed font-semibold max-w-md mx-auto lg:mx-0 line-clamp-2 sm:line-clamp-none">
               {currentScene.subtitle}
             </p>
 
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white border border-[#E8DDCB] shadow-xs">
               <Flame className="w-4 h-4 text-[#C85A17] shrink-0" />
-              <span className="text-xs font-bold text-[#2C1A14]">
+              <span className="text-[11px] sm:text-xs font-bold text-[#2C1A14]">
                 {currentScene.highlight}
               </span>
             </div>
 
             {/* Pricing & CTA Actions */}
-            <div className="pt-2 flex flex-wrap items-center gap-4">
+            <div className="pt-1 sm:pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4">
               <div className="flex items-baseline gap-2">
-                <span className="font-anton text-3xl text-[#2C1A14]">
+                <span className="font-anton text-2xl sm:text-3xl text-[#2C1A14]">
                   ₹{currentScene.product.price}
                 </span>
                 {currentScene.product.originalPrice && (
@@ -233,7 +208,7 @@ export default function Hero() {
 
               <button
                 onClick={handleAddToCart}
-                className={`px-6 py-3.5 rounded-2xl font-extrabold text-xs sm:text-sm transition-all shadow-md flex items-center gap-2 ${
+                className={`px-5 sm:px-6 py-2.5 sm:py-3.5 rounded-2xl font-extrabold text-xs sm:text-sm transition-all shadow-md flex items-center gap-2 ${
                   added
                     ? 'bg-green-700 text-white'
                     : 'bg-[#C85A17] hover:bg-[#B44E11] text-white active:scale-95 cursor-pointer'
@@ -281,57 +256,24 @@ export default function Hero() {
               Verified by 50,000+ temple trusts and households across India.
             </p>
 
-            <div className="pt-2">
+            {/* <div className="pt-2">
               <button
                 onClick={() => setIsCartOpen(true)}
                 className="px-5 py-2.5 rounded-xl bg-[#2C1A14] hover:bg-[#3D2319] text-[#DAA520] text-xs font-bold transition-all shadow-xs border border-[#DAA520]/40"
               >
                 Open Sacred Cart
               </button>
-            </div>
+            </div> */}
           </div>
 
         </div>
 
-        {/* Bottom Interactive Progress Bar & Controls */}
-        <div className="w-full max-w-7xl mx-auto z-20 space-y-2 pt-2">
-          
-          <div className="flex items-center justify-between text-xs font-bold text-[#3D2319]">
-            <span className="flex items-center gap-1.5 text-[#C85A17]">
-              <Award className="w-4 h-4" />
-              <span>Scroll Story Progress: {Math.round(scrollProgress * 100)}%</span>
-            </span>
-            <span className="text-[11px] text-[#2C1A14] font-semibold hidden sm:inline flex items-center gap-1">
-              <span>Scroll down to switch products</span>
-              <ChevronDown className="w-4 h-4 animate-bounce text-[#C85A17]" />
-            </span>
-          </div>
-
-          {/* Progress Bar Track */}
-          <div className="w-full bg-[#E8DDCB] h-2.5 rounded-lg overflow-hidden relative">
-            <div
-              className="bg-[#C85A17] h-full transition-all duration-300"
-              style={{ width: `${scrollProgress * 100}%` }}
-            />
-          </div>
-
-          {/* Scene Buttons */}
-          <div className="grid grid-cols-5 gap-2 pt-1">
-            {scenes.map((s, idx) => (
-              <button
-                key={s.index}
-                onClick={() => jumpToScene(idx)}
-                className={`py-2 px-1 rounded-xl text-[10px] sm:text-xs font-extrabold transition-all truncate border ${
-                  activeSceneIndex === idx
-                    ? 'bg-[#2C1A14] text-[#DAA520] border-[#DAA520] shadow-sm scale-102'
-                    : 'bg-white text-[#3D2319] border-[#E8DDCB] hover:bg-[#F3ECE0]'
-                }`}
-              >
-                {s.index}. {s.product.name.split(' ')[0]}
-              </button>
-            ))}
-          </div>
-
+        {/* Minimal Scroll Hint */}
+        <div className="w-full max-w-7xl mx-auto z-20 pb-1 flex items-center justify-center">
+          <span className="text-[11px] text-[#3D2319] font-semibold flex items-center gap-1.5 opacity-60">
+            <ChevronDown className="w-4 h-4 animate-bounce text-[#C85A17]" />
+            <span>Scroll down to switch products</span>
+          </span>
         </div>
 
       </div>

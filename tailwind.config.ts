@@ -40,7 +40,21 @@ const config: Config = {
       borderRadius: {
         '4xl': '2rem',
         '5xl': '2.5rem',
-      }
+      },
+      keyframes: {
+        ticker: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        tickerReverse: {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+      },
+      animation: {
+        ticker: 'ticker 30s linear infinite',
+        tickerReverse: 'tickerReverse 25s linear infinite',
+      },
     },
   },
   plugins: [],

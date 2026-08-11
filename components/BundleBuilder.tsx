@@ -42,10 +42,7 @@ export default function BundleBuilder() {
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#C85A17]/15 border border-[#C85A17]/30 text-[#C85A17] text-xs font-extrabold uppercase tracking-widest">
-            <Tag className="w-4 h-4 text-[#C85A17]" />
-            <span>Custom Ritual Kit Builder • Save Extra 15%</span>
-          </div>
+        
           <h2 className="font-anton text-4xl sm:text-6xl text-[#2C1A14] leading-tight uppercase tracking-wider">
             Build Your Own Sacred Kit
           </h2>

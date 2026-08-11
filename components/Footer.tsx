@@ -32,10 +32,7 @@ export default function Footer() {
               Preserving ancient scriptural purity in cold-pressed sesame oils, A2 bilona ghee, and festival samagri for temples and households worldwide.
             </p>
 
-            <div className="flex items-center gap-2 text-xs text-[#DAA520] font-extrabold">
-              <ShieldCheck className="w-4 h-4 text-[#C85A17]" />
-              <span>HPLC Verified • 100% Adulteration Free</span>
-            </div>
+           
           </div>
 
           {/* Quick Links */}
@@ -73,26 +70,15 @@ export default function Footer() {
             <p className="text-xs sm:text-sm text-[#FAF6EE] font-bold">
               Phone: {SITE_CONFIG.contactPhone} | Email: {SITE_CONFIG.contactEmail}
             </p>
-            <div className="pt-2">
-              <Link
-                href="#catalog"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-[#C85A17] hover:bg-[#B44E11] text-white font-extrabold text-xs shadow-md transition-all"
-              >
-                <Sparkles className="w-4 h-4 text-[#DAA520]" />
-                <span>Shop Pure Poojan Oils</span>
-              </Link>
-            </div>
+           
           </div>
 
         </div>
 
         {/* Bottom Bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#FAF6EE]/60 font-medium">
-          <p>© {new Date().getFullYear()} Gurukripa Traders, Inc. All rights reserved. Crafted for Divine Devotion.</p>
-          <div className="flex items-center gap-1 text-[#DAA520] font-bold">
-            <span>Blessed with Temple Radiance & Devotion</span>
-            <Heart className="w-3.5 h-3.5 text-[#C85A17] fill-current" />
-          </div>
+          <p>© {new Date().getFullYear()} Gurukripa Traders, Inc. All rights reserved.</p>
+          
         </div>
 
       </div>
