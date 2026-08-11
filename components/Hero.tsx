@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { PRODUCTS } from '@/lib/data';
 import { useCart } from '@/lib/cart-context';
-import { ShoppingBag, Sparkles, ArrowRight, ShieldCheck, Flame, Check, ChevronDown } from 'lucide-react';
+import { ShoppingBag, ArrowRight, Flame, Check, ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -13,7 +13,7 @@ if (typeof window !== 'undefined') {
 }
 
 export default function Hero() {
-  const { addToCart, setIsCartOpen } = useCart();
+  const { addToCart } = useCart();
   const [activeSceneIndex, setActiveSceneIndex] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [added, setAdded] = useState(false);
@@ -21,7 +21,7 @@ export default function Hero() {
   const heroTrackRef = useRef<HTMLDivElement>(null);
   const pinnedViewportRef = useRef<HTMLDivElement>(null);
 
-  // 5 Storytelling Scenes
+  // 4 Storytelling Scenes
   const scenes = [
     {
       index: '01',
@@ -29,8 +29,6 @@ export default function Hero() {
       tag: 'Bestseller • 36-Hour Akhand Flame',
       hindiTag: 'वरदान दीपक जलाने का तेल',
       headline: 'Vardaan दीपक Oil',
-      // subtitle: 'Formulated from 100% cold-pressed sesame oil infused with Bhimseni camphor. Guaranteed zero carbon soot buildup for home & temple shrines.',
-      // badgeText: '35% OFF PACKS',
       highlight: '36-Hour Continuous Soot-Free Flame',
     },
     {
@@ -39,8 +37,6 @@ export default function Hero() {
       tag: 'Temple Grade • Consecrated Dravya',
       hindiTag: 'केसरी वंदना दीप द्रव्य ',
       headline: 'Shri Kesari Yellow Dravya Jars',
-      // subtitle: 'Packed in UV-protected airtight jars (250ml, 500ml & 1000ml). Delivers a radiant golden flame for daily Aarti & Deepam rituals.',
-      // badgeText: 'AIRTIGHT LEAKPROOF',
       highlight: 'Radiant Golden Flame & Aromatic Purity',
     },
     {
@@ -49,8 +45,6 @@ export default function Hero() {
       tag: 'Festival Special • Royal Edition',
       hindiTag: 'श्री केसरी प्लस वंदना दीप (बॉक्स पैक)',
       headline: 'Kesari Plus Gift Boxes',
-      // subtitle: 'Luxury box edition designed for Deepavali gifting and auspicious family celebrations. Includes consecrated brass deepam accessories.',
-      // badgeText: 'FESTIVAL SPECIAL',
       highlight: 'Royal Box Pack for Auspicious Gifting',
     },
     {
@@ -102,10 +96,21 @@ export default function Hero() {
 
   const jumpToScene = (idx: number) => {
     if (!heroTrackRef.current) return;
+    const targetIdx = Math.max(0, Math.min(scenes.length - 1, idx));
     const trackHeight = heroTrackRef.current.offsetHeight;
-    const targetScroll = heroTrackRef.current.offsetTop + (idx / scenes.length) * trackHeight;
+    const targetScroll = heroTrackRef.current.offsetTop + (targetIdx / scenes.length) * trackHeight;
     window.scrollTo({ top: targetScroll, behavior: 'smooth' });
   };
+
+  // Scroll Motion Physics (calculates floating motion as user scrolls down)
+  const sceneLength = 1 / scenes.length;
+  const currentSceneStart = activeSceneIndex * sceneLength;
+  const sceneProgress = Math.min(1, Math.max(0, (scrollProgress - currentSceneStart) / sceneLength));
+
+  // Dynamic vertical motion (downward float) + organic 3D rotation tilt
+  const translateY = (sceneProgress - 0.5) * 55; 
+  const rotateDeg = (sceneProgress - 0.5) * 7;
+  const bgScale = 1 + (sceneProgress - 0.5) * 0.06;
 
   return (
     <div ref={heroTrackRef} className="relative w-full h-[450vh] bg-[#FAF6EE]">
@@ -119,37 +124,39 @@ export default function Hero() {
         <div className="absolute top-10 left-1/3 w-[450px] h-[450px] bg-[#C85A17]/10 rounded-3xl blur-3xl pointer-events-none" />
         <div className="absolute bottom-10 right-1/4 w-[400px] h-[400px] bg-[#DAA520]/15 rounded-3xl blur-3xl pointer-events-none" />
 
-        {/* Top Header Controls Bar */}
-        <div className="w-full max-w-7xl mx-auto flex items-center justify-between z-20 pt-1">
-          
-        
-         
-        </div>
-
         {/* Giant Watermark Display Title Behind Product */}
         <div className="w-full text-center z-10 my-auto pointer-events-none select-none">
-          <h1 className="font-anton text-5xl sm:text-8xl lg:text-[10rem] text-[#2C1A14] leading-none uppercase tracking-widest opacity-90">
+          <h1 className="font-anton text-4xl sm:text-8xl lg:text-[10rem] text-[#2C1A14] leading-none uppercase tracking-widest opacity-90 transition-all duration-300">
             GURUKRIPA
           </h1>
-          <p className="text-xs sm:text-sm font-extrabold text-[#C85A17] tracking-widest uppercase mt-1">
-            VARDAAN OIL •  KESARI  VANDANA DEEP DRAVYA • HAWAN SAMAGRI
+          <p className="text-[10px] sm:text-sm font-extrabold text-[#C85A17] tracking-widest uppercase mt-1">
+            VARDAAN OIL • KESARI VANDANA DEEP DRAVYA • HAWAN SAMAGRI
           </p>
         </div>
 
-        {/* DEAD-CENTER PURE CUTOUT PRODUCT SHOWCASE (RESPONSIVE MOVED UPWARD - NO OVERLAP) */}
+        {/* MOTION CUTOUT SHOWCASE (SCROLL-DOWN MOTION PHYSICS) */}
         <div className="absolute left-1/2 top-[24%] sm:top-[28%] lg:top-[30%] -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none">
           {scenes.map((scene, idx) => {
             const isActive = activeSceneIndex === idx;
+            const isPast = idx < activeSceneIndex;
+
+            // Motion physics: Active drops & tilts down on scroll; past drops out; future comes from top
+            const activeTransform = `translate(-50%, calc(-50% + ${translateY}px)) rotate(${rotateDeg}deg) scale(${bgScale})`;
+            const pastTransform = `translate(-50%, calc(-50% + 80px)) rotate(10deg) scale(0.82)`;
+            const futureTransform = `translate(-50%, calc(-50% - 80px)) rotate(-10deg) scale(0.82)`;
+
+            const currentTransform = isActive ? activeTransform : isPast ? pastTransform : futureTransform;
+
             return (
               <div
                 key={scene.index}
-                className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-700 ease-out ${
-                  isActive
-                    ? 'opacity-100 scale-100 translate-y-0'
-                    : 'opacity-0 scale-90 translate-y-6 pointer-events-none'
-                }`}
+                className="absolute left-1/2 top-1/2 transition-all duration-500 ease-out pointer-events-none"
+                style={{
+                  transform: currentTransform,
+                  opacity: isActive ? 1 : 0,
+                }}
               >
-                <div className="relative w-[180px] h-[230px] sm:w-[340px] sm:h-[420px] lg:w-[480px] lg:h-[560px] filter drop-shadow-[0_15px_25px_rgba(44,26,20,0.3)]">
+                <div className="relative w-[200px] h-[250px] sm:w-[360px] sm:h-[440px] lg:w-[480px] lg:h-[560px] filter drop-shadow-[0_20px_35px_rgba(44,26,20,0.32)]">
                   <Image
                     src={scene.product.image}
                     alt={scene.product.name}
@@ -163,7 +170,31 @@ export default function Hero() {
           })}
         </div>
 
-        {/* Open Content Overlays (NO BACKGROUND CARD BOXES / NO CAPSULES) */}
+        {/* Mobile Quick Touch Arrows */}
+        <div className="lg:hidden absolute top-[30%] inset-x-2 z-40 flex items-center justify-between pointer-events-none">
+          <button
+            onClick={() => jumpToScene(activeSceneIndex - 1)}
+            disabled={activeSceneIndex === 0}
+            className={`w-9 h-9 rounded-2xl bg-white/90 backdrop-blur-md border border-[#E8DDCB] text-[#2C1A14] flex items-center justify-center shadow-md pointer-events-auto transition-all ${
+              activeSceneIndex === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-[#C85A17] hover:text-white'
+            }`}
+            aria-label="Previous Product"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button
+            onClick={() => jumpToScene(activeSceneIndex + 1)}
+            disabled={activeSceneIndex === scenes.length - 1}
+            className={`w-9 h-9 rounded-2xl bg-white/90 backdrop-blur-md border border-[#E8DDCB] text-[#2C1A14] flex items-center justify-center shadow-md pointer-events-auto transition-all ${
+              activeSceneIndex === scenes.length - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-[#C85A17] hover:text-white'
+            }`}
+            aria-label="Next Product"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+
+        {/* Open Content Overlays */}
         <div className="w-full max-w-7xl mx-auto flex-1 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-end lg:items-center pb-6 sm:pb-10 lg:pb-0 z-20 pointer-events-auto">
           
           {/* Left Text Column */}
@@ -255,21 +286,12 @@ export default function Hero() {
             <p className="text-xs text-[#3D2319] font-semibold leading-relaxed max-w-xs ml-auto">
               Verified by 50,000+ temple trusts and households across India.
             </p>
-
-            {/* <div className="pt-2">
-              <button
-                onClick={() => setIsCartOpen(true)}
-                className="px-5 py-2.5 rounded-xl bg-[#2C1A14] hover:bg-[#3D2319] text-[#DAA520] text-xs font-bold transition-all shadow-xs border border-[#DAA520]/40"
-              >
-                Open Sacred Cart
-              </button>
-            </div> */}
           </div>
 
         </div>
 
         {/* Mobile & Desktop Scene Switcher Pills */}
-        <div className="w-full max-w-7xl mx-auto z-20 pb-1 flex items-center justify-center gap-2">
+        <div className="w-full max-w-7xl mx-auto z-20 pb-1 flex items-center justify-center gap-1.5 sm:gap-2">
           {scenes.map((s, idx) => (
             <button
               key={s.index}
