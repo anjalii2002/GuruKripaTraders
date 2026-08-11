@@ -69,7 +69,7 @@ export default function BundleBuilder() {
                   }`}
                 >
                   <div className="relative w-16 h-16 rounded-xl overflow-hidden bg-[#F3ECE0] border border-[#E8DDCB] shrink-0">
-                    <Image src={prod.image} alt={prod.name} fill className="object-cover" />
+                    <Image src={prod.image} alt={prod.name} fill className="object-contain p-1" />
                   </div>
 
                   <div className="flex-1 space-y-1">

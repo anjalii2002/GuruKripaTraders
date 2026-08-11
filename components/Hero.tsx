@@ -268,11 +268,28 @@ export default function Hero() {
 
         </div>
 
+        {/* Mobile & Desktop Scene Switcher Pills */}
+        <div className="w-full max-w-7xl mx-auto z-20 pb-1 flex items-center justify-center gap-2">
+          {scenes.map((s, idx) => (
+            <button
+              key={s.index}
+              onClick={() => jumpToScene(idx)}
+              className={`px-3 py-1 rounded-xl text-[10px] sm:text-xs font-extrabold transition-all cursor-pointer border ${
+                activeSceneIndex === idx
+                  ? 'bg-[#C85A17] text-white border-[#C85A17] shadow-sm scale-105'
+                  : 'bg-white/80 text-[#2C1A14] border-[#E8DDCB] hover:bg-white'
+              }`}
+            >
+              {s.index}. {s.product.name.split(' ')[0]}
+            </button>
+          ))}
+        </div>
+
         {/* Minimal Scroll Hint */}
         <div className="w-full max-w-7xl mx-auto z-20 pb-1 flex items-center justify-center">
           <span className="text-[11px] text-[#3D2319] font-semibold flex items-center gap-1.5 opacity-60">
             <ChevronDown className="w-4 h-4 animate-bounce text-[#C85A17]" />
-            <span>Scroll down to switch products</span>
+            <span>Scroll or tap numbers to switch</span>
           </span>
         </div>
 

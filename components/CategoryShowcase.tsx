@@ -89,7 +89,7 @@ export default function CategoryShowcase() {
                   src={cat.image}
                   alt={cat.title}
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="object-contain p-4 group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#2C1A14]/80 via-transparent to-transparent" />
               </div>
