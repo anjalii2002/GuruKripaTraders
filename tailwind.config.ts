@@ -36,8 +36,8 @@ const config: Config = {
         brand: ['Cinzel', 'serif'],
         cinzel: ['Cinzel', 'serif'],
         anton: ['Cinzel', 'serif'],
-        serif: ['Playfair Display', 'serif'],
-        sans: ['Outfit', 'sans-serif'],
+        serif: ['Cormorant Garamond', 'serif'],
+        sans: ['Plus Jakarta Sans', 'sans-serif'],
         hindi: ['Rozha One', 'serif'],
       },
       borderRadius: {
