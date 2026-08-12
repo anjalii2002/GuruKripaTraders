@@ -10,16 +10,16 @@ const config: Config = {
     extend: {
       colors: {
         beige: {
-          DEFAULT: "#FAF6EE",
-          light: "#FDFBF7",
+          DEFAULT: "#FAF6F0",
+          light: "#FFFDF9",
           dark: "#F3ECE0",
           card: "#EFE6D5",
         },
         brown: {
-          DEFAULT: "#2C1A14",
-          light: "#3D2319",
-          medium: "#4A2C1D",
-          dark: "#1A0F0B",
+          DEFAULT: "#1C1310",
+          light: "#2C1A14",
+          medium: "#3D2319",
+          dark: "#120B09",
         },
         burntOrange: {
           DEFAULT: "#C85A17",
@@ -33,14 +33,16 @@ const config: Config = {
         }
       },
       fontFamily: {
-        anton: ['Outfit', 'sans-serif'],
+        brand: ['Cinzel', 'serif'],
+        cinzel: ['Cinzel', 'serif'],
+        anton: ['Cinzel', 'serif'],
+        serif: ['Playfair Display', 'serif'],
         sans: ['Outfit', 'sans-serif'],
-        serif: ['Outfit', 'sans-serif'],
-        brand: ['Outfit', 'sans-serif'],
+        hindi: ['Rozha One', 'serif'],
       },
       borderRadius: {
-        '4xl': '2rem',
-        '5xl': '2.5rem',
+        '3xl': '1.75rem',
+        '4xl': '2.25rem',
       },
       keyframes: {
         ticker: {
