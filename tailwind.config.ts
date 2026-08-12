@@ -33,12 +33,12 @@ const config: Config = {
         }
       },
       fontFamily: {
-        brand: ['Cinzel', 'serif'],
-        cinzel: ['Cinzel', 'serif'],
-        anton: ['Cinzel', 'serif'],
-        serif: ['Cormorant Garamond', 'serif'],
-        sans: ['Plus Jakarta Sans', 'sans-serif'],
-        hindi: ['Rozha One', 'serif'],
+        brand: ['Inter', 'sans-serif'],
+        cinzel: ['Inter', 'sans-serif'],
+        anton: ['Inter', 'sans-serif'],
+        serif: ['Inter', 'sans-serif'],
+        sans: ['Inter', 'sans-serif'],
+        hindi: ['Rozha One', 'sans-serif'],
       },
       borderRadius: {
         '3xl': '1.75rem',
