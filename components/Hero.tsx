@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { PRODUCTS } from '@/lib/data';
 import { useCart } from '@/lib/cart-context';
-import { ShoppingBag, ArrowRight, Flame, Check, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
+import { ShoppingBag, ArrowRight, Flame, Check, ChevronLeft, ChevronRight, ChevronDown, Sparkles } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
