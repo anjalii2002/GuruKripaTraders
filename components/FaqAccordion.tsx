@@ -7,6 +7,7 @@ import { SITE_CONFIG } from '@/lib/data';
 export default function FaqAccordion() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
+  // Exactly 3 authentic FAQs
   const faqs = [
     {
       category: 'Store Location & Shop Visit',
@@ -15,34 +16,16 @@ export default function FaqAccordion() {
       icon: '🏪',
     },
     {
-      category: 'Vardaan Deepak Oil',
+      category: 'Vardaan Deepak Oil Purity',
       q: 'What makes Vardaan Til Tail superior to commercial poojan oils?',
       a: 'Unlike commercial oils that use cheap mineral bases or synthetic paraffin (which emit thick black carbon soot and stain silver idols), Vardaan Til Tail is 100% cold-pressed sesame oil infused with pure Bhimseni camphor. It guarantees an immaculate, soot-free flame for up to 36 hours continuous Akhand Jyoti.',
       icon: '🪔',
     },
     {
-      category: 'Shri Kesari Dravya Jars & Boxes',
-      q: 'What is the difference between Shri Kesari Dravya Jars and Kesari Plus Gift Boxes?',
-      a: 'Shri Kesari Dravya Jars come in airtight, UV-protected 500g and 1kg yellow jars designed for daily temple Aarti. Kesari Plus Gift Boxes are royal embossed festival gift packs containing consecrated Kesari Plus Dravya, brass wicks, and scriptural certificates—ideal for Deepavali, Gruha Pravesh, and corporate gifting.',
-      icon: '🎁',
-    },
-    {
-      category: 'Shri Dham Hawan Samagri',
-      q: 'What ingredients are included in Shri Dham Shudh Hawan Samagri?',
-      a: 'Shri Dham Hawan Samagri is a sacred blend of 40+ natural herbs, pure guggal, dry fruits, Bhimseni kapoor, red chandan, and vedic dravya, prepared fresh under the direct supervision of Vedic Acharyas for Hawan, Yajna, and Agnihotra rituals.',
-      icon: '🔥',
-    },
-    {
-      category: 'Free Shipping & Offers',
-      q: 'What are the Free Shipping and Silver Coin offers?',
-      a: 'We offer FREE express shipping across India on all orders above ₹999. Orders above ₹2,999 receive a complimentary, temple-blessed energized Silver Coin as our divine prasadam.',
+      category: 'Orders, Shipping & Wholesale',
+      q: 'Do you offer free delivery and bulk wholesale pricing for temple trusts?',
+      a: 'Yes! We offer FREE express shipping across India on all orders above ₹999. For temple trusts, festival pandals, and wholesale bulk buyers, Gurukripa Traders provides direct counter wholesale pricing. Call or WhatsApp us at +91 98765 43210.',
       icon: '✨',
-    },
-    {
-      category: 'Wholesale & Temple Bulk Orders',
-      q: 'Do you offer wholesale rates for temple trusts and bulk buyers?',
-      a: 'Yes! Gurukripa Traders is a primary Kirana & Poojan Wholesaler in Bhopal. We supply bulk consignments to major temple trusts, festival pandals, and retail stores across India. Call or WhatsApp us at +91 98765 43210 for wholesale pricing.',
-      icon: '🏛️',
     },
   ];
 
@@ -53,87 +36,90 @@ export default function FaqAccordion() {
       <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#C85A17]/10 rounded-3xl blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#DAA520]/8 rounded-3xl blur-3xl pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-8">
 
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-14">
-          <div className="space-y-4 max-w-xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#C85A17]/20 border border-[#C85A17]/30 text-[#C85A17] text-xs font-extrabold uppercase tracking-widest">
-              <MessageCircleQuestion className="w-4 h-4" />
-              <span>GURUKRIPA TRADERS FAQ</span>
-            </div>
-            <h2 className="font-anton text-4xl sm:text-6xl text-white uppercase tracking-wider leading-none">
-              Frequently<br />
-              <span className="text-[#C85A17]">Asked</span> Questions
-            </h2>
-            <p className="text-[#FAF6EE]/60 text-sm font-medium leading-relaxed">
-              Everything you need to know about our Vardaan oils, Kesari jars, Hawan Samagri, Bhopal shop counter, and delivery across India.
-            </p>
+        <div className="text-center space-y-3 max-w-2xl mx-auto">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C85A17]/20 border border-[#DAA520]/40 text-[#DAA520] text-[11px] font-extrabold uppercase tracking-widest font-sans">
+            <MessageCircleQuestion className="w-3.5 h-3.5" />
+            <span>Frequently Asked Questions</span>
           </div>
-
-          {/* Right CTA Card */}
-          <div className="bg-[#C85A17] rounded-2xl p-6 space-y-3 max-w-xs border border-[#DAA520]/30 shadow-xl">
-            <Flame className="w-8 h-8 text-[#DAA520]" />
-            <p className="text-white font-bold text-base leading-snug">
-              Have custom bulk requirement? Contact Gurukripa Traders Bhopal directly.
-            </p>
-            <a
-              href="https://wa.me/919876543210"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-white text-[#2C1A14] text-xs font-extrabold px-4 py-2.5 rounded-xl hover:bg-[#FAF6EE] transition-colors w-fit cursor-pointer"
-            >
-              <Phone className="w-4 h-4 text-[#C85A17]" />
-              <span>WhatsApp Shop Counter</span>
-            </a>
-          </div>
+          <h2 className="font-brand text-3xl sm:text-5xl text-white font-extrabold leading-tight uppercase tracking-wider">
+            Clear Answers for Devotees
+          </h2>
+          <p className="font-serif text-[#FAF6EE]/80 text-sm sm:text-base font-medium">
+            Everything you need to know about our consecrated oils, Bhopal store location, and delivery orders.
+          </p>
         </div>
 
-        {/* FAQ Accordion List */}
-        <div className="space-y-3">
-          {faqs.map((faq, idx) => {
-            const isOpen = openIndex === idx;
+        {/* Accordion Items List (Exactly 3) */}
+        <div className="space-y-4">
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
+
             return (
               <div
-                key={idx}
-                className={`rounded-2xl border overflow-hidden transition-all duration-300 ${
+                key={index}
+                className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
                   isOpen
-                    ? 'bg-[#FAF6EE] border-[#DAA520]/50 shadow-lg'
-                    : 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20'
+                    ? 'bg-[#1C1310] border-[#DAA520]/60 shadow-lg'
+                    : 'bg-[#3D2319]/40 border-[#3D2319] hover:border-[#DAA520]/30'
                 }`}
               >
                 <button
-                  onClick={() => setOpenIndex(isOpen ? null : idx)}
-                  className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 group cursor-pointer"
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  className="w-full px-6 py-5 flex items-center justify-between text-left gap-4 cursor-pointer focus:outline-none"
+                  aria-expanded={isOpen}
                 >
-                  <div className="flex items-center gap-4">
-                    <span className="text-2xl flex-shrink-0">{faq.icon}</span>
-                    <div className="space-y-0.5">
-                      <span className={`text-[10px] font-extrabold uppercase tracking-widest block ${isOpen ? 'text-[#C85A17]' : 'text-[#DAA520]/60'}`}>
-                        {faq.category}
-                      </span>
-                      <span className={`font-bold text-sm sm:text-base leading-snug block ${isOpen ? 'text-[#2C1A14]' : 'text-white'}`}>
-                        {faq.q}
-                      </span>
-                    </div>
+                  <div className="flex items-center gap-3.5">
+                    <span className="text-xl shrink-0">{faq.icon}</span>
+                    <span className="font-brand font-bold text-base sm:text-lg text-white tracking-wide">
+                      {faq.q}
+                    </span>
                   </div>
-                  <div className={`w-8 h-8 flex-shrink-0 rounded-xl flex items-center justify-center transition-all ${isOpen ? 'bg-[#C85A17] rotate-180' : 'bg-white/10 group-hover:bg-[#C85A17]/30'}`}>
-                    <ChevronDown className={`w-4 h-4 ${isOpen ? 'text-white' : 'text-[#DAA520]'}`} />
+
+                  <div
+                    className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 transition-transform duration-300 ${
+                      isOpen ? 'bg-[#C85A17] text-white rotate-180' : 'bg-[#2C1A14] text-[#DAA520]'
+                    }`}
+                  >
+                    <ChevronDown className="w-4 h-4" />
                   </div>
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6">
-                    <div className="ml-12 pl-4 border-l-2 border-[#C85A17]/40">
-                      <p className="text-sm text-[#3D2319] leading-relaxed font-medium">
-                        {faq.a}
-                      </p>
+                  <div className="px-6 pb-6 pt-1 text-sm text-[#FAF6EE]/85 leading-relaxed font-sans border-t border-[#3D2319]/80 space-y-3">
+                    <p>{faq.a}</p>
+                    <div className="pt-2 flex items-center gap-2 text-xs font-bold text-[#DAA520]">
+                      <Flame className="w-3.5 h-3.5 text-[#C85A17]" />
+                      <span>{faq.category}</span>
                     </div>
                   </div>
                 )}
               </div>
             );
           })}
+        </div>
+
+        {/* Contact Support Strip */}
+        <div className="p-5 rounded-2xl bg-[#1C1310] border border-[#DAA520]/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-[#C85A17]/20 border border-[#DAA520]/40 flex items-center justify-center text-[#DAA520] shrink-0">
+              <Phone className="w-5 h-5" />
+            </div>
+            <div>
+              <span className="font-brand font-bold text-white text-sm block">Have Wholesale or Custom Order Questions?</span>
+              <p className="text-xs text-[#FAF6EE]/70 font-sans">Contact Gurukripa Traders Bhopal directly on WhatsApp or Call</p>
+            </div>
+          </div>
+          <a
+            href="https://wa.me/919876543210"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2.5 rounded-xl bg-[#C85A17] hover:bg-[#B44E11] text-white text-xs font-extrabold uppercase tracking-wider transition-all shadow-md active:scale-95 shrink-0 border border-[#DAA520]/40 font-sans"
+          >
+            Chat on WhatsApp
+          </a>
         </div>
 
       </div>
