@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <CategoryShowcase />
+      {/* <CategoryShowcase /> */}
       <ProductCatalog />
       <BundleBuilder />
       {/* <VedicRitualGuide /> */}

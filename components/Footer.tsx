@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { SITE_CONFIG } from '@/lib/data';
-import { ShieldCheck, Heart, Sparkles } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Star, ExternalLink } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -29,10 +29,13 @@ export default function Footer() {
             </div>
 
             <p className="text-xs sm:text-sm text-[#FAF6EE]/80 leading-relaxed font-normal max-w-sm">
-              Preserving ancient scriptural purity in cold-pressed sesame oils, A2 bilona ghee, and festival samagri for temples and households worldwide.
+              Preserving ancient scriptural purity in cold-pressed sesame oils, A2 bilona ghee, and sacred Hawan Samagri for temples and households worldwide.
             </p>
 
-           
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white/10 border border-[#DAA520]/30 text-xs text-[#DAA520] font-bold">
+              <Star className="w-3.5 h-3.5 fill-[#DAA520]" />
+              <span>{SITE_CONFIG.rating} on Justdial</span>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -51,25 +54,55 @@ export default function Footer() {
                 <Link href="#catalog" className="hover:text-[#DAA520] transition-colors">Shri Kesari Dravya Jars</Link>
               </li>
               <li>
-                <Link href="#bundle-builder" className="hover:text-[#DAA520] transition-colors">Kit Builder (15% OFF)</Link>
+                <Link href="#catalog" className="hover:text-[#DAA520] transition-colors">Shri Dham Havan Samagri</Link>
               </li>
               <li>
-                <Link href="#purity" className="hover:text-[#DAA520] transition-colors">Purity Guarantee</Link>
+                <Link href="#bundle-builder" className="hover:text-[#DAA520] transition-colors">Kit Builder (15% OFF)</Link>
               </li>
             </ul>
           </div>
 
-          {/* Contact Details */}
-          <div className="lg:col-span-5 space-y-3">
+          {/* Real Shop Details from Justdial */}
+          <div className="lg:col-span-5 space-y-4">
             <h4 className="font-serif font-bold text-base text-[#DAA520] uppercase tracking-wider">
-              Sacred Retail Desk
+              Visit Our Shop / Wholesale Desk
             </h4>
-            <p className="text-xs sm:text-sm text-[#FAF6EE]/90 font-medium">
-              {SITE_CONFIG.address}
-            </p>
-            <p className="text-xs sm:text-sm text-[#FAF6EE] font-bold">
-              Phone: {SITE_CONFIG.contactPhone} | Email: {SITE_CONFIG.contactEmail}
-            </p>
+            
+            <div className="space-y-2 text-xs sm:text-sm text-[#FAF6EE]/90 font-medium">
+              
+              <div className="flex items-start gap-2.5">
+                <MapPin className="w-4 h-4 text-[#C85A17] shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-bold text-white">Guru Kripa Traders</p>
+                  <p className="text-white/80">{SITE_CONFIG.address}</p>
+                  <a
+                    href="https://www.justdial.com/Bhopal/Guru-Kripa-Traders-Hanuman-Mandiar-Jumerati/0755PX755-X755-110405182844-P1W6_BZDET"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-[11px] text-[#DAA520] hover:underline font-bold mt-1"
+                  >
+                    <span>View Listing on Justdial</span>
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2.5 pt-1">
+                <Clock className="w-4 h-4 text-[#C85A17] shrink-0" />
+                <span>{SITE_CONFIG.openingHours}</span>
+              </div>
+
+              <div className="flex items-center gap-2.5 pt-1">
+                <Phone className="w-4 h-4 text-[#C85A17] shrink-0" />
+                <span>Phone: {SITE_CONFIG.contactPhone}</span>
+              </div>
+
+              <div className="flex items-center gap-2.5">
+                <Mail className="w-4 h-4 text-[#C85A17] shrink-0" />
+                <span>Email: {SITE_CONFIG.contactEmail}</span>
+              </div>
+
+            </div>
            
           </div>
 
@@ -77,8 +110,8 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#FAF6EE]/60 font-medium">
-          <p>© {new Date().getFullYear()} Gurukripa Traders, Inc. All rights reserved.</p>
-          
+          <p>© {new Date().getFullYear()} Gurukripa Traders, Bhopal. All rights reserved.</p>
+          <p className="text-[11px]">Hanuman Ganj Road, Jumerati Market, Bhopal</p>
         </div>
 
       </div>
