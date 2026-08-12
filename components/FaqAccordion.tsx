@@ -2,39 +2,46 @@
 
 import React, { useState } from 'react';
 import { ChevronDown, MessageCircleQuestion, Flame, Phone } from 'lucide-react';
+import { SITE_CONFIG } from '@/lib/data';
 
 export default function FaqAccordion() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const faqs = [
     {
-      category: 'Product',
+      category: 'Store Location & Shop Visit',
+      q: 'Where is Gurukripa Traders located, and can I buy directly from the shop?',
+      a: `Yes! Gurukripa Traders is located at Hanuman Ganj Road, Near Hanuman Mandir, Jumerati Market, Bhopal, MP - 462001. We are open Monday to Saturday from 10:30 AM to 8:30 PM for retail purchases and wholesale counter orders.`,
+      icon: '🏪',
+    },
+    {
+      category: 'Vardaan Deepak Oil',
       q: 'What makes Vardaan Til Tail superior to commercial poojan oils?',
-      a: 'Unlike commercial poojan oils that use cheap mineral oils or synthetic paraffin (which emit thick black carbon soot and stain silver idols), Vardaan Til Tail is formulated from 100% cold-pressed sesame oil infused with Bhimseni camphor. It guarantees an immaculate, soot-free flame for up to 36 hours continuous Akhand Jyoti.',
+      a: 'Unlike commercial oils that use cheap mineral bases or synthetic paraffin (which emit thick black carbon soot and stain silver idols), Vardaan Til Tail is 100% cold-pressed sesame oil infused with pure Bhimseni camphor. It guarantees an immaculate, soot-free flame for up to 36 hours continuous Akhand Jyoti.',
       icon: '🪔',
     },
     {
-      category: 'Ritual',
-      q: 'How does the Sacred Gotra & Name Sankalp packaging work?',
-      a: 'When you select the "+ Sankalp" option during checkout, our temple priests chant traditional mantras in your family name and Gotra prior to dispatching your consignment. A personalized, high-priest signed Sankalp slip is included inside your package.',
-      icon: '🕉️',
-    },
-    {
-      category: 'Offers',
-      q: 'What are the Free Shipping and Silver Coin offers?',
-      a: 'We offer FREE express shipping across India on all orders above ₹999. Orders above ₹2,999 receive a complimentary, temple-blessed energized Silver Coin as our divine prasadam.',
+      category: 'Shri Kesari Dravya Jars & Boxes',
+      q: 'What is the difference between Shri Kesari Dravya Jars and Kesari Plus Gift Boxes?',
+      a: 'Shri Kesari Dravya Jars come in airtight, UV-protected 500g and 1kg yellow jars designed for daily temple Aarti. Kesari Plus Gift Boxes are royal embossed festival gift packs containing consecrated Kesari Plus Dravya, brass wicks, and scriptural certificates—ideal for Deepavali, Gruha Pravesh, and corporate gifting.',
       icon: '🎁',
     },
     {
-      category: 'Product',
-      q: 'What is the shelf life of Shri Kesari Deep Dravya Jars?',
-      a: 'All Shri Kesari Dravya Jars and Vardaan Til Tail bottles are packaged in leak-proof, UV-protected airtight containers. They retain full aromatic potency and purity for 24 months from the manufacturing date.',
-      icon: '⏳',
+      category: 'Shri Dham Hawan Samagri',
+      q: 'What ingredients are included in Shri Dham Shudh Hawan Samagri?',
+      a: 'Shri Dham Hawan Samagri is a sacred blend of 40+ natural herbs, pure guggal, dry fruits, Bhimseni kapoor, red chandan, and vedic dravya, prepared fresh under the direct supervision of Vedic Acharyas for Hawan, Yajna, and Agnihotra rituals.',
+      icon: '🔥',
     },
     {
-      category: 'Bulk',
-      q: 'Do you offer bulk rates for temple trusts and festival gifting?',
-      a: 'Yes! We supply bulk consignments to major temple trusts, festival committees, and corporate clients across India. Click the "Bulk Rates" button on our marketplace section or WhatsApp us directly for wholesale rates.',
+      category: 'Free Shipping & Offers',
+      q: 'What are the Free Shipping and Silver Coin offers?',
+      a: 'We offer FREE express shipping across India on all orders above ₹999. Orders above ₹2,999 receive a complimentary, temple-blessed energized Silver Coin as our divine prasadam.',
+      icon: '✨',
+    },
+    {
+      category: 'Wholesale & Temple Bulk Orders',
+      q: 'Do you offer wholesale rates for temple trusts and bulk buyers?',
+      a: 'Yes! Gurukripa Traders is a primary Kirana & Poojan Wholesaler in Bhopal. We supply bulk consignments to major temple trusts, festival pandals, and retail stores across India. Call or WhatsApp us at +91 98765 43210 for wholesale pricing.',
       icon: '🏛️',
     },
   ];
@@ -53,14 +60,14 @@ export default function FaqAccordion() {
           <div className="space-y-4 max-w-xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#C85A17]/20 border border-[#C85A17]/30 text-[#C85A17] text-xs font-extrabold uppercase tracking-widest">
               <MessageCircleQuestion className="w-4 h-4" />
-              <span>GOT QUESTIONS?</span>
+              <span>GURUKRIPA TRADERS FAQ</span>
             </div>
             <h2 className="font-anton text-4xl sm:text-6xl text-white uppercase tracking-wider leading-none">
               Frequently<br />
               <span className="text-[#C85A17]">Asked</span> Questions
             </h2>
             <p className="text-[#FAF6EE]/60 text-sm font-medium leading-relaxed">
-              Everything you need to know about our products, purity certifications, gotra sankalp, and delivery.
+              Everything you need to know about our Vardaan oils, Kesari jars, Hawan Samagri, Bhopal shop counter, and delivery across India.
             </p>
           </div>
 
@@ -68,21 +75,21 @@ export default function FaqAccordion() {
           <div className="bg-[#C85A17] rounded-2xl p-6 space-y-3 max-w-xs border border-[#DAA520]/30 shadow-xl">
             <Flame className="w-8 h-8 text-[#DAA520]" />
             <p className="text-white font-bold text-base leading-snug">
-              Still have questions? Talk to our Vedic Experts directly.
+              Have custom bulk requirement? Contact Gurukripa Traders Bhopal directly.
             </p>
             <a
-              href="https://wa.me/919999999999"
+              href="https://wa.me/919876543210"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-white text-[#2C1A14] text-xs font-extrabold px-4 py-2.5 rounded-xl hover:bg-[#FAF6EE] transition-colors w-fit"
+              className="flex items-center gap-2 bg-white text-[#2C1A14] text-xs font-extrabold px-4 py-2.5 rounded-xl hover:bg-[#FAF6EE] transition-colors w-fit cursor-pointer"
             >
               <Phone className="w-4 h-4 text-[#C85A17]" />
-              WhatsApp Us
+              <span>WhatsApp Shop Counter</span>
             </a>
           </div>
         </div>
 
-        {/* FAQ Accordion Grid */}
+        {/* FAQ Accordion List */}
         <div className="space-y-3">
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
@@ -97,7 +104,7 @@ export default function FaqAccordion() {
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : idx)}
-                  className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 group"
+                  className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 group cursor-pointer"
                 >
                   <div className="flex items-center gap-4">
                     <span className="text-2xl flex-shrink-0">{faq.icon}</span>
