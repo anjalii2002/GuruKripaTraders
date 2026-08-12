@@ -295,7 +295,7 @@ export default function Hero() {
           </div>
 
           {/* LEFT-SIDE PRODUCT SHOWCASE */}
-          <div className="absolute left-[28%] top-[68%] -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none">
+          <div className="absolute left-[26%] top-[66%] -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none">
             {scenes.map((scene, idx) => {
               const isActive = activeSceneIndex === idx;
               const isPast = idx < activeSceneIndex;
@@ -315,7 +315,7 @@ export default function Hero() {
                     opacity: isActive ? 1 : 0,
                   }}
                 >
-                  <div className="relative w-[340px] h-[400px] filter drop-shadow-[0_20px_35px_rgba(44,26,20,0.32)]">
+                  <div className="relative w-[380px] h-[440px] filter drop-shadow-[0_25px_40px_rgba(44,26,20,0.35)]">
                     <Image
                       src={scene.product?.image || '/images/vardaan-bottles.png'}
                       alt={scene.product?.name || 'Product'}
@@ -333,7 +333,7 @@ export default function Hero() {
           <div className="w-full max-w-7xl mx-auto flex-1 grid grid-cols-12 gap-8 items-center z-20 pointer-events-auto">
             
             {/* Right Text Column */}
-            <div className="col-span-6 col-start-6 space-y-3.5">
+            <div className="col-span-7 col-start-6 space-y-4">
               
               <div className="space-y-0.5">
                 <span className="text-xs font-extrabold text-[#C85A17] uppercase tracking-widest block">
@@ -348,7 +348,7 @@ export default function Hero() {
                 {currentScene.headline}
               </h2>
 
-              <p className="font-serif text-[#3D2319]/80 text-sm sm:text-base leading-relaxed font-medium max-w-lg">
+              <p className="font-serif text-[#3D2319]/80 text-base leading-relaxed font-medium max-w-xl">
                 {currentScene.subtitle}
               </p>
 
@@ -374,7 +374,7 @@ export default function Hero() {
 
                 <button
                   onClick={handleAddToCart}
-                  className={`px-6 py-3 rounded-xl font-extrabold text-sm transition-all shadow-md flex items-center gap-2 font-sans ${
+                  className={`px-7 py-3.5 rounded-xl font-extrabold text-sm transition-all shadow-md flex items-center gap-2 font-sans ${
                     added
                       ? 'bg-green-700 text-white'
                       : 'bg-[#C85A17] hover:bg-[#B44E11] text-white active:scale-95 cursor-pointer border border-[#DAA520]/40'
@@ -383,7 +383,7 @@ export default function Hero() {
                   {added ? (
                     <>
                       <Check className="w-4 h-4" />
-                      <span>Added</span>
+                      <span>Added to Cart</span>
                     </>
                   ) : (
                     <>
@@ -393,6 +393,24 @@ export default function Hero() {
                     </>
                   )}
                 </button>
+              </div>
+
+              {/* Trust Badges Strip Filling Bottom Right */}
+              <div className="pt-3 flex items-center gap-6 text-[11px] font-bold text-[#3D2319]/80 border-t border-[#E8DDCB]/60 font-sans">
+                <span className="flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-[#DAA520]" />
+                  <span>100% Scriptural Purity</span>
+                </span>
+                <span>•</span>
+                <span className="flex items-center gap-1.5">
+                  <Flame className="w-3.5 h-3.5 text-[#C85A17]" />
+                  <span>Zero Black Soot Guarantee</span>
+                </span>
+                <span>•</span>
+                <span className="flex items-center gap-1.5">
+                  <Check className="w-3.5 h-3.5 text-green-700" />
+                  <span>Bhopal Direct Dispatch</span>
+                </span>
               </div>
 
             </div>
