@@ -1,20 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:opsz,wght@14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  *,
   body {
-    @apply min-h-screen bg-[#FAF6EE] text-[#2C1A14] font-sans antialiased selection:bg-[#C85A17] selection:text-white;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  }
+
+  body {
+    @apply min-h-screen bg-[#FAF6EE] text-[#2C1A14] antialiased selection:bg-[#C85A17] selection:text-white;
   }
 }
 
-.font-anton {
-  font-family: 'Anton', sans-serif;
-}
-
-.font-serif {
-  font-family: 'Playfair Display', serif;
+/* Override custom font classes to use single unified Outfit font */
+.font-anton,
+.font-brand,
+.font-cinzel,
+.font-serif,
+.font-sans,
+.font-hindi {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
 }
 
 /* Custom scrollbars */

@@ -33,9 +33,10 @@ const config: Config = {
         }
       },
       fontFamily: {
-        anton: ['Anton', 'sans-serif'],
-        sans: ['Inter', 'sans-serif'],
-        serif: ['Playfair Display', 'serif'],
+        anton: ['Outfit', 'sans-serif'],
+        sans: ['Outfit', 'sans-serif'],
+        serif: ['Outfit', 'sans-serif'],
+        brand: ['Outfit', 'sans-serif'],
       },
       borderRadius: {
         '4xl': '2rem',
