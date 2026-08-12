@@ -275,10 +275,10 @@ export default function Hero() {
 
           {/* Giant Watermark Display Title Behind Product */}
           <div className="w-full text-center z-10 my-auto pointer-events-none select-none">
-            <h1 className="font-anton text-[10rem] text-[#2C1A14] leading-none uppercase tracking-widest opacity-90">
+            <h1 className="font-brand text-[9.5rem] text-[#1C1310] font-extrabold leading-none uppercase tracking-widest opacity-90">
               GURU KRIPA
             </h1>
-            <p className="text-sm font-extrabold text-[#C85A17] tracking-widest uppercase mt-1">
+            <p className="text-xs font-extrabold text-[#C85A17] tracking-widest uppercase mt-1 font-sans">
               VARDAAN OIL • KESARI VANDANA DEEP DRAVYA • HAWAN SAMAGRI
             </p>
           </div>
@@ -333,17 +333,17 @@ export default function Hero() {
                 </p>
               </div>
 
-              <h2 className="font-anton text-5xl text-[#2C1A14] leading-tight uppercase tracking-wider">
+              <h2 className="font-brand text-4xl sm:text-5xl font-extrabold text-[#1C1310] leading-tight uppercase tracking-wide">
                 {currentScene.headline}
               </h2>
 
-              <p className="text-[#3D2319] text-sm leading-relaxed font-semibold max-w-md">
+              <p className="font-serif text-[#3D2319]/80 text-sm sm:text-base leading-relaxed font-medium max-w-md">
                 {currentScene.subtitle}
               </p>
 
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-white border border-[#E8DDCB] shadow-xs">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white border border-[#E8DDCB] shadow-xs">
                 <Flame className="w-4 h-4 text-[#C85A17] shrink-0" />
-                <span className="text-xs font-bold text-[#2C1A14]">
+                <span className="text-xs font-bold text-[#1C1310] font-sans">
                   {currentScene.highlight}
                 </span>
               </div>
@@ -351,22 +351,22 @@ export default function Hero() {
               {/* Pricing & CTA Actions */}
               <div className="pt-2 flex items-center gap-4">
                 <div className="flex items-baseline gap-2">
-                  <span className="font-anton text-3xl text-[#2C1A14]">
-                    ₹{currentScene.product.price}
+                  <span className="font-brand text-3xl sm:text-4xl font-extrabold text-[#1C1310]">
+                    ₹{currentScene.product?.price || currentProduct?.price || 249}
                   </span>
-                  {currentScene.product.originalPrice && (
-                    <span className="text-xs text-[#3D2319] line-through font-medium">
-                      ₹{currentScene.product.originalPrice}
+                  {(currentScene.product?.originalPrice || currentProduct?.originalPrice) && (
+                    <span className="text-xs text-[#3D2319]/60 line-through font-semibold font-sans">
+                      ₹{currentScene.product?.originalPrice || currentProduct?.originalPrice}
                     </span>
                   )}
                 </div>
 
                 <button
                   onClick={handleAddToCart}
-                  className={`px-6 py-3.5 rounded-2xl font-extrabold text-sm transition-all shadow-md flex items-center gap-2 ${
+                  className={`px-6 py-3 rounded-xl font-extrabold text-sm transition-all shadow-md flex items-center gap-2 font-sans ${
                     added
                       ? 'bg-green-700 text-white'
-                      : 'bg-[#C85A17] hover:bg-[#B44E11] text-white active:scale-95 cursor-pointer'
+                      : 'bg-[#C85A17] hover:bg-[#B44E11] text-white active:scale-95 cursor-pointer border border-[#DAA520]/40'
                   }`}
                 >
                   {added ? (
