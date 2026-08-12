@@ -131,7 +131,7 @@ export default function Hero() {
           {/* Watermark Brand Title */}
           <div>
             <h1 className="font-anton text-4xl text-[#2C1A14] tracking-widest uppercase leading-none">
-              GURUKRIPA TRADERS
+              GURU KRIPA TRADERS
             </h1>
             <p className="text-[10px] font-extrabold text-[#C85A17] tracking-widest uppercase mt-1">
               CANONS OF SCRIPTURAL PURITY
@@ -288,7 +288,7 @@ export default function Hero() {
           {/* Giant Watermark Display Title Behind Product */}
           <div className="w-full text-center z-10 my-auto pointer-events-none select-none">
             <h1 className="font-anton text-[10rem] text-[#2C1A14] leading-none uppercase tracking-widest opacity-90">
-              GURUKRIPA
+              GURU KRIPA
             </h1>
             <p className="text-sm font-extrabold text-[#C85A17] tracking-widest uppercase mt-1">
               VARDAAN OIL • KESARI VANDANA DEEP DRAVYA • HAWAN SAMAGRI
@@ -296,7 +296,7 @@ export default function Hero() {
           </div>
 
           {/* DEAD-CENTER PURE CUTOUT PRODUCT SHOWCASE */}
-          <div className="absolute left-1/2 top-[30%] -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none">
+          <div className="absolute left-1/2 top-[42%] -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none">
             {scenes.map((scene, idx) => {
               const isActive = activeSceneIndex === idx;
               const isPast = idx < activeSceneIndex;
