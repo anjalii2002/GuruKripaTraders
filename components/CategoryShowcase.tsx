@@ -53,21 +53,17 @@ export default function CategoryShowcase() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-          <div className="space-y-2">
-           
-            <h2 className="font-anton text-3xl sm:text-5xl text-[#2C1A14] leading-tight uppercase tracking-wider">
-              Shop by Category
-            </h2>
+        <div className="text-center max-w-3xl mx-auto space-y-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C85A17]/10 border border-[#C85A17]/20 text-[#C85A17] text-[11px] font-extrabold uppercase tracking-widest font-sans">
+            <Sparkles className="w-3.5 h-3.5 text-[#DAA520]" />
+            <span>Sacred Collections</span>
           </div>
-
-          <Link
-            href="#catalog"
-            className="inline-flex items-center gap-2 text-xs sm:text-sm font-extrabold text-[#C85A17] hover:text-[#B44E11] transition-colors"
-          >
-            <span>View All Products & Packs</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+          <h2 className="font-brand text-3xl sm:text-5xl text-[#1C1310] font-extrabold leading-tight uppercase tracking-wider">
+            Explore Poojan Categories
+          </h2>
+          <p className="font-serif text-[#3D2319]/80 text-sm sm:text-base font-medium leading-relaxed">
+            Formulated according to authentic scriptural canons for daily Aarti, Deepam, and festival Yajna rituals.
+          </p>
         </div>
 
         {/* Categories Bento Grid */}

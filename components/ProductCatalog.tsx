@@ -32,13 +32,16 @@ export default function ProductCatalog() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4">
-          
-          <h2 className="font-anton text-4xl sm:text-6xl text-[#2C1A14] leading-tight uppercase tracking-wider">
+        <div className="text-center max-w-3xl mx-auto space-y-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#C85A17]/10 border border-[#C85A17]/20 text-[#C85A17] text-[11px] font-extrabold uppercase tracking-widest font-sans">
+            <Sparkles className="w-3.5 h-3.5 text-[#DAA520]" />
+            <span>Lab Verified & Consecrated</span>
+          </div>
+          <h2 className="font-brand text-3xl sm:text-5xl font-extrabold text-[#1C1310] leading-tight uppercase tracking-wider">
             Curated Poojan Oils & Samagri
           </h2>
-          <p className="text-[#3D2319] text-base sm:text-lg font-medium">
-            Browse our lab-verified ingredients, consecrated poojan oils, and festival ritual trunks prepared according to sacred canons.
+          <p className="font-serif text-[#3D2319]/80 text-sm sm:text-base font-medium leading-relaxed">
+            Browse our lab-verified ingredients, consecrated poojan oils, and festival ritual products prepared according to sacred canons.
           </p>
         </div>
 
