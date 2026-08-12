@@ -90,6 +90,17 @@ export default function Hero() {
     return () => ctx.revert();
   }, [scenes.length]);
 
+  // Automatic product scrolling interval for mobile view (cycles every 3.5 seconds)
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (typeof window !== 'undefined' && window.innerWidth < 1024) {
+        setActiveSceneIndex((prev) => (prev + 1) % scenes.length);
+      }
+    }, 3500);
+
+    return () => clearInterval(timer);
+  }, [scenes.length]);
+
   const currentScene = scenes[activeSceneIndex] || scenes[0];
   const currentProduct = currentScene?.product || PRODUCTS[0];
 
