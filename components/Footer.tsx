@@ -7,7 +7,7 @@ import { MapPin, Phone, Mail, Clock, Star, ExternalLink } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#2C1A14] text-[#FAF6EE] pt-16 pb-10 border-t border-[#DAA520]/40 relative overflow-hidden shadow-2xl">
+    <footer className="w-full bg-[#2C1A14] text-[#FAF6EE] pt-10 pb-6 border-t border-[#DAA520]/40 relative overflow-hidden shadow-2xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 border-b border-[#3D2319] pb-12">

@@ -7,7 +7,7 @@ import { Star, Quote, Sparkles, CheckCircle2 } from 'lucide-react';
 
 export default function Testimonials() {
   return (
-    <section className="w-full py-16 sm:py-24 bg-white border-b border-[#E8DDCB]">
+    <section className="w-full py-8 sm:py-12 bg-white border-b border-[#E8DDCB]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Header */}

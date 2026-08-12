@@ -28,7 +28,7 @@ export default function ProductCatalog() {
   });
 
   return (
-    <section id="catalog" className="w-full py-16 sm:py-24 bg-[#FAF6EE] border-b border-[#E8DDCB]">
+    <section id="catalog" className="w-full py-8 sm:py-12 bg-[#FAF6EE] border-b border-[#E8DDCB]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         
         {/* Section Header */}
@@ -46,7 +46,7 @@ export default function ProductCatalog() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 bg-white p-4 rounded-3xl border border-[#E8DDCB] shadow-xs">
           
           {/* Category Tabs */}
-          <div className="flex items-center gap-2 w-full md:w-auto overflow-x-auto pb-1 md:pb-0 scrollbar-none max-w-full">
+          <div className="flex items-center gap-2 w-full md:w-auto overflow-x-auto pb-0 scrollbar-none max-w-full">
             {categories.map((cat) => (
               <button
                 key={cat}

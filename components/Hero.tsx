@@ -141,22 +141,7 @@ export default function Hero() {
             </p>
           </div>
 
-          {/* Product Switcher Tabs */}
-          <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none justify-start sm:justify-center">
-            {scenes.map((s, idx) => (
-              <button
-                key={s.index}
-                onClick={() => jumpToScene(idx)}
-                className={`px-3 py-1.5 rounded-xl text-[11px] font-extrabold transition-all shrink-0 border ${
-                  activeSceneIndex === idx
-                    ? 'bg-[#C85A17] text-white border-[#C85A17] shadow-sm'
-                    : 'bg-white text-[#2C1A14] border-[#E8DDCB]'
-                }`}
-              >
-                {s.index}. {(s.product?.name || s.headline || '').split(' ')[0]}
-              </button>
-            ))}
-          </div>
+
 
           {/* Mobile Product Card / Showcase */}
           <div className="bg-white rounded-3xl p-5 border border-[#E8DDCB] shadow-lg relative space-y-4">
@@ -299,7 +284,7 @@ export default function Hero() {
           </div>
 
           {/* DEAD-CENTER PURE CUTOUT PRODUCT SHOWCASE */}
-          <div className="absolute left-1/2 top-[58%] -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none">
+          <div className="absolute left-1/2 top-[68%] -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none">
             {scenes.map((scene, idx) => {
               const isActive = activeSceneIndex === idx;
               const isPast = idx < activeSceneIndex;
@@ -319,7 +304,7 @@ export default function Hero() {
                     opacity: isActive ? 1 : 0,
                   }}
                 >
-                  <div className="relative w-[380px] h-[450px] filter drop-shadow-[0_20px_35px_rgba(44,26,20,0.32)]">
+                  <div className="relative w-[340px] h-[400px] filter drop-shadow-[0_20px_35px_rgba(44,26,20,0.32)]">
                     <Image
                       src={scene.product?.image || '/images/vardaan-bottles.png'}
                       alt={scene.product?.name || 'Product'}
@@ -429,30 +414,7 @@ export default function Hero() {
 
           </div>
 
-          {/* Desktop Scene Switcher Pills */}
-          <div className="w-full max-w-7xl mx-auto z-20 pb-1 flex items-center justify-center gap-2">
-            {scenes.map((s, idx) => (
-              <button
-                key={s.index}
-                onClick={() => jumpToScene(idx)}
-                className={`px-3 py-1 rounded-xl text-xs font-extrabold transition-all cursor-pointer border ${
-                  activeSceneIndex === idx
-                    ? 'bg-[#C85A17] text-white border-[#C85A17] shadow-sm scale-105'
-                    : 'bg-white/80 text-[#2C1A14] border-[#E8DDCB] hover:bg-white'
-                }`}
-              >
-                {s.index}. {(s.product?.name || s.headline || '').split(' ')[0]}
-              </button>
-            ))}
-          </div>
 
-          {/* Minimal Scroll Hint */}
-          <div className="w-full max-w-7xl mx-auto z-20 pb-1 flex items-center justify-center">
-            <span className="text-[11px] text-[#3D2319] font-semibold flex items-center gap-1.5 opacity-60">
-              <ChevronDown className="w-4 h-4 animate-bounce text-[#C85A17]" />
-              <span>Scroll down to switch products</span>
-            </span>
-          </div>
 
         </div>
       </div>

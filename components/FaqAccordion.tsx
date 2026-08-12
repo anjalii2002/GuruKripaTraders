@@ -47,7 +47,7 @@ export default function FaqAccordion() {
   ];
 
   return (
-    <section className="w-full py-16 sm:py-24 bg-[#2C1A14] relative overflow-hidden">
+    <section className="w-full py-8 sm:py-12 bg-[#2C1A14] relative overflow-hidden">
       
       {/* Background Decorative Orbs */}
       <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#C85A17]/10 rounded-3xl blur-3xl pointer-events-none" />
