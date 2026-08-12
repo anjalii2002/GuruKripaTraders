@@ -52,7 +52,7 @@ export default function Hero() {
     },
     {
       index: '04',
-      product: PRODUCTS[5], // Shri Dham Havan Samagri
+      product: PRODUCTS[3] || PRODUCTS[0], // Shri Dham Havan Samagri
       tag: 'Pure Sanatani Havan • 40+ Sacred Herbs',
       hindiTag: 'शुद्ध सनातनी हवन सामग्री',
       headline: 'Shri Dham Havan Samagri',
@@ -189,8 +189,8 @@ export default function Hero() {
             {/* Centered Product Cutout Image */}
             <div className="relative w-full h-[260px] mx-auto bg-[#FAF6EE] rounded-2xl p-4 flex items-center justify-center border border-[#E8DDCB]/50">
               <Image
-                src={currentScene.product.image}
-                alt={currentScene.product.name}
+                src={currentProduct?.image || '/images/vardaan-bottles.png'}
+                alt={currentProduct?.name || 'Product'}
                 fill
                 className="object-contain p-2"
                 priority
@@ -299,7 +299,7 @@ export default function Hero() {
           </div>
 
           {/* DEAD-CENTER PURE CUTOUT PRODUCT SHOWCASE */}
-          <div className="absolute left-1/2 top-[42%] -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none">
+          <div className="absolute left-1/2 top-[58%] -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none">
             {scenes.map((scene, idx) => {
               const isActive = activeSceneIndex === idx;
               const isPast = idx < activeSceneIndex;
@@ -319,10 +319,10 @@ export default function Hero() {
                     opacity: isActive ? 1 : 0,
                   }}
                 >
-                  <div className="relative w-[480px] h-[560px] filter drop-shadow-[0_20px_35px_rgba(44,26,20,0.32)]">
+                  <div className="relative w-[380px] h-[450px] filter drop-shadow-[0_20px_35px_rgba(44,26,20,0.32)]">
                     <Image
-                      src={scene.product.image}
-                      alt={scene.product.name}
+                      src={scene.product?.image || '/images/vardaan-bottles.png'}
+                      alt={scene.product?.name || 'Product'}
                       fill
                       className="object-contain"
                       priority={idx === 0}
