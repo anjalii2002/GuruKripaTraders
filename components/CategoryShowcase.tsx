@@ -84,12 +84,12 @@ export default function CategoryShowcase() {
               </div> */}
 
               {/* Image Background */}
-              <div className="relative w-full h-56 bg-[#F3ECE0] overflow-hidden">
+              <div className="relative w-full h-64 bg-white overflow-hidden">
                 <Image
                   src={cat.image}
                   alt={cat.title}
                   fill
-                  className="object-contain p-4 group-hover:scale-110 transition-transform duration-700"
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#2C1A14]/80 via-transparent to-transparent" />
               </div>
