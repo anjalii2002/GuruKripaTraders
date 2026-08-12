@@ -13,7 +13,7 @@ export default function Testimonials() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
         
-          <h2 className="font-anton text-4xl sm:text-5xl text-[#2C1A14] uppercase tracking-wider leading-tight">
+          <h2 className="font-anton text-xl sm:text-3xl md:text-4xl lg:text-5xl text-[#2C1A14] uppercase tracking-wider leading-none whitespace-nowrap overflow-hidden text-ellipsis">
             Loved by Temples & Families Across India
           </h2>
           <p className="text-[#3D2319] text-base sm:text-lg font-medium">

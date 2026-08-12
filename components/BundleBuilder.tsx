@@ -43,7 +43,7 @@ export default function BundleBuilder() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
         
-          <h2 className="font-anton text-4xl sm:text-6xl text-[#2C1A14] leading-tight uppercase tracking-wider">
+          <h2 className="font-anton text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-[#2C1A14] leading-none uppercase tracking-wider whitespace-nowrap overflow-hidden text-ellipsis">
             Build Your Own Sacred Kit
           </h2>
           <p className="text-[#3D2319] text-base sm:text-lg font-medium">
