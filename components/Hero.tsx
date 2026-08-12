@@ -90,12 +90,15 @@ export default function Hero() {
     return () => ctx.revert();
   }, [scenes.length]);
 
-  const currentScene = scenes[activeSceneIndex];
+  const currentScene = scenes[activeSceneIndex] || scenes[0];
+  const currentProduct = currentScene?.product || PRODUCTS[0];
 
   const handleAddToCart = () => {
-    addToCart(currentScene.product);
-    setAdded(true);
-    setTimeout(() => setAdded(false), 1800);
+    if (currentProduct) {
+      addToCart(currentProduct);
+      setAdded(true);
+      setTimeout(() => setAdded(false), 1800);
+    }
   };
 
   const jumpToScene = (idx: number) => {
@@ -150,7 +153,7 @@ export default function Hero() {
                     : 'bg-white text-[#2C1A14] border-[#E8DDCB]'
                 }`}
               >
-                {s.index}. {s.product.name.split(' ')[0]}
+                {s.index}. {(s.product?.name || s.headline || '').split(' ')[0]}
               </button>
             ))}
           </div>
@@ -438,7 +441,7 @@ export default function Hero() {
                     : 'bg-white/80 text-[#2C1A14] border-[#E8DDCB] hover:bg-white'
                 }`}
               >
-                {s.index}. {s.product.name.split(' ')[0]}
+                {s.index}. {(s.product?.name || s.headline || '').split(' ')[0]}
               </button>
             ))}
           </div>
