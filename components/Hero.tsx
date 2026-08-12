@@ -294,8 +294,8 @@ export default function Hero() {
             </p>
           </div>
 
-          {/* DEAD-CENTER PURE CUTOUT PRODUCT SHOWCASE */}
-          <div className="absolute left-1/2 top-[68%] -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none">
+          {/* LEFT-SIDE PRODUCT SHOWCASE */}
+          <div className="absolute left-[28%] top-[68%] -translate-x-1/2 -translate-y-1/2 z-30 pointer-events-none">
             {scenes.map((scene, idx) => {
               const isActive = activeSceneIndex === idx;
               const isPast = idx < activeSceneIndex;
@@ -329,11 +329,11 @@ export default function Hero() {
             })}
           </div>
 
-          {/* Open Content Overlays */}
+          {/* Open Content Overlays: Right-Aligned Text */}
           <div className="w-full max-w-7xl mx-auto flex-1 grid grid-cols-12 gap-8 items-center z-20 pointer-events-auto">
             
-            {/* Left Text Column */}
-            <div className="col-span-5 space-y-3 max-w-lg">
+            {/* Right Text Column */}
+            <div className="col-span-6 col-start-6 space-y-3.5">
               
               <div className="space-y-0.5">
                 <span className="text-xs font-extrabold text-[#C85A17] uppercase tracking-widest block">
@@ -348,7 +348,7 @@ export default function Hero() {
                 {currentScene.headline}
               </h2>
 
-              <p className="font-serif text-[#3D2319]/80 text-sm sm:text-base leading-relaxed font-medium max-w-md">
+              <p className="font-serif text-[#3D2319]/80 text-sm sm:text-base leading-relaxed font-medium max-w-lg">
                 {currentScene.subtitle}
               </p>
 
@@ -395,32 +395,6 @@ export default function Hero() {
                 </button>
               </div>
 
-            </div>
-
-            {/* Right Flank: Open Purity Stat */}
-            <div className="col-span-4 col-start-9 flex flex-col justify-between space-y-4 text-right">
-              <div>
-                <span className="text-[10px] font-extrabold text-[#C85A17] uppercase tracking-widest block">
-                  SCRIPTURAL PURITY RATING
-                </span>
-                <span className="font-anton text-6xl text-[#2C1A14] block mt-1">99.8%</span>
-              </div>
-
-              <div className="-space-x-3 flex items-center justify-end pt-1">
-                <div className="relative w-10 h-10 rounded-2xl border-2 border-[#DAA520] overflow-hidden">
-                  <Image src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Devotee" fill className="object-cover" />
-                </div>
-                <div className="relative w-10 h-10 rounded-2xl border-2 border-[#DAA520] overflow-hidden">
-                  <Image src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Pundit" fill className="object-cover" />
-                </div>
-                <div className="relative w-10 h-10 rounded-2xl border-2 border-[#DAA520] overflow-hidden">
-                  <Image src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80" alt="Temple Priest" fill className="object-cover" />
-                </div>
-              </div>
-
-              <p className="text-xs text-[#3D2319] font-semibold leading-relaxed max-w-xs ml-auto">
-                Verified by 50,000+ temple trusts and households across India.
-              </p>
             </div>
 
           </div>
