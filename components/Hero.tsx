@@ -135,10 +135,11 @@ export default function Hero() {
       {/* ==========================================
           MOBILE HERO (Dedicated mobile-first layout)
          ========================================== */}
-      <section className="block lg:hidden w-full bg-[#FAF6EE] py-6 px-4 border-b border-[#E8DDCB] relative overflow-hidden">
+      <section className="block lg:hidden w-full bg-gradient-to-b from-[#FFFDF9] via-[#FAF6F0] to-[#F3ECE0] py-6 px-4 border-b border-[#DAA520]/30 relative overflow-hidden">
         
-        {/* Ambient Glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[320px] h-[320px] bg-[#C85A17]/10 rounded-full blur-3xl pointer-events-none" />
+        {/* Ambient Radiant Glow & Pattern */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-[350px] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#DAA520]/20 via-[#C85A17]/10 to-transparent pointer-events-none blur-2xl" />
+        <div className="absolute inset-0 bg-[radial-gradient(#DAA520_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.12] pointer-events-none" />
 
         <div className="max-w-md mx-auto space-y-5 relative z-10 text-center">
 
@@ -273,16 +274,18 @@ export default function Hero() {
       {/* ==========================================
           DESKTOP HERO (Pinned 450vh Storytelling)
          ========================================== */}
-      <div ref={heroTrackRef} className="hidden lg:block relative w-full h-[450vh] bg-[#FAF6EE]">
+      <div ref={heroTrackRef} className="hidden lg:block relative w-full h-[450vh] bg-[#FAF6F0]">
         
         {/* Sticky Viewport Pinned Container */}
         <div
           ref={pinnedViewportRef}
-          className="w-full h-screen sticky top-0 overflow-hidden bg-[#FAF6EE] flex flex-col justify-between pt-3 pb-5 px-8 border-b border-[#E8DDCB] relative"
+          className="w-full h-screen sticky top-0 overflow-hidden bg-gradient-to-b from-[#FFFDF9] via-[#FAF6F0] to-[#F3ECE0] flex flex-col justify-between pt-3 pb-5 px-8 border-b border-[#DAA520]/30 relative"
         >
-          {/* Ambient Soft Glow Orbs */}
-          <div className="absolute top-10 left-1/3 w-[450px] h-[450px] bg-[#C85A17]/10 rounded-3xl blur-3xl pointer-events-none" />
-          <div className="absolute bottom-10 right-1/4 w-[400px] h-[400px] bg-[#DAA520]/15 rounded-3xl blur-3xl pointer-events-none" />
+          {/* Radiant Golden Temple Light Beam & Orbs */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[650px] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#DAA520]/22 via-[#C85A17]/10 to-transparent pointer-events-none blur-2xl" />
+          <div className="absolute inset-0 bg-[radial-gradient(#DAA520_1.2px,transparent_1.2px)] [background-size:32px_32px] opacity-[0.14] pointer-events-none" />
+          <div className="absolute -top-20 -left-20 w-[500px] h-[500px] bg-[#C85A17]/12 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-20 -right-20 w-[550px] h-[550px] bg-[#DAA520]/18 rounded-full blur-3xl pointer-events-none" />
 
           {/* Giant Watermark Display Title Behind Product */}
           <div className="w-full text-center z-10 my-auto pointer-events-none select-none">
@@ -422,5 +425,6 @@ export default function Hero() {
         </div>
       </div>
     </>
-  );
+
+);
 }
